@@ -48,23 +48,54 @@
 //     }
 // }
 
-let a = document.getElementById("btn")
-let b = document.getElementById("btn2")
-let c = document.getElementsByTagName("body")
-console.log(c[0])
-console.log(c);
-let bool = true;
-console.log(b);
-console.log(a);
-a.addEventListener("dblclick", func);
-function func() {
-    if (bool) {
-        a.style.backgroundColor = "pink";
-        bool = false;
-    } else {
-        a.style.backgroundColor = "green";
-        bool = "true";
-    }
-    b.style.backgroundColor = "red";
+// let a = document.getElementById("btn")
+// let b = document.getElementById("btn2")
+// let c = document.getElementsByTagName("body")
+// console.log(c[0])
+// console.log(c);
+// let bool = true;
+// console.log(b);
+// console.log(a);
+// a.addEventListener("dblclick", func);
+// function func() {
+//     if (bool) {
+//         a.style.backgroundColor = "pink";
+//         bool = false;
+//     } else {
+//         a.style.backgroundColor = "green";
+//         bool = "true";
+//     }
+//     b.style.backgroundColor = "red";
+// }
+// console.log(document)
+
+let a = document.querySelector("#btn2")
+a.addEventListener("click", funct)
+function funct() {
+    let a = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
+    let c = Math.floor(Math.random() * 256);
+    document.body.style.backgroundColor = `rgb(${a}, ${b}, ${c})`
 }
-console.log(document)
+
+let inp = document.getElementById("inp")
+inp.addEventListener("keydown", key)
+function key(e) {
+    if (e.key == "f") {
+        console.log("in function")
+        let a = Math.floor(Math.random() * 256);
+        let b = Math.floor(Math.random() * 256);
+        let c = Math.floor(Math.random() * 256);
+        document.body.style.backgroundColor = `rgb(${a},${b},${c})`
+    }
+}
+
+let form = document.getElementById("form")
+let naam = document.getElementById("name")
+console.log("naam")
+console.log("form")
+form.addEventListener("submit", submittedData)
+function submittedData(){
+    let n = naam.innerHTML;
+    console.log(n)
+}
