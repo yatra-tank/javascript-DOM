@@ -90,12 +90,18 @@ function key(e) {
     }
 }
 
-let form = document.getElementById("form")
-let naam = document.getElementById("name")
-console.log("naam")
-console.log("form")
-form.addEventListener("submit", submittedData)
-function submittedData(){
-    let n = naam.innerHTML;
-    console.log(n)
+let form = document.getElementById("form");
+let nam = document.getElementById("name")
+let age = document.getElementById("age")
+console.log(form)
+form.addEventListener("submit", submitted)
+let c = document.getElementById("cont");
+function submitted(e) {
+    e.preventDefault();
+    let a = nam.value
+    let b = age.value
+    console.log(a)
+    console.log(b);
+    c.innerHTML = `<p> name is ${a} </p> 
+    <p> age is ${b} </p>`
 }
